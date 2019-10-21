@@ -26,7 +26,7 @@ public class Model {
 		} //Should we print an error message, or just not touch the board if the space is taken already?
 	}
 	
-	public void setSpace(int space) {
+	private void setSpace(int space) {
 		board[space] = current_player;
 		//Check for game over
 		
