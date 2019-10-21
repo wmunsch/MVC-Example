@@ -3,7 +3,7 @@ import java.awt.Point;
 // TODO : Javadoc 
 public class Model {
 	//The game board which stores x's and o's
-	private int[] board; 
+	private int [] board; 
 	private int current_player = 1; // 1 is 0s, -1 is Xs
 	
 	public Model() {
@@ -13,6 +13,10 @@ public class Model {
 	public int[] getBoard() {
 		return board;
 	}
+
+	public int getPlayer() {
+		return current_player;
+	}
 	
 	private void resetBoard() {
 		for (int i : board) {
@@ -20,16 +24,9 @@ public class Model {
 		}
 	}
 	
-	public void validMove(int space) {
-		if (board[space] == 0) {
-			setSpace(space);
-		} //Should we print an error message, or just not touch the board if the space is taken already?
-	}
-	
-	private void setSpace(int space) {
+	public void setSpace(int space) {
 		board[space] = current_player;
 		//Check for game over
-		
 		
 		changePlayer();
 	}
