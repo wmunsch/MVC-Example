@@ -1,3 +1,10 @@
+/**
+ * Model-View-Controller Group Project
+ * Will, Michael, Tristan, David, Austin
+ * October 11th, 2019
+ * Last Updated: October 22nd, 2019
+ */
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
@@ -5,25 +12,25 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 
-//TODO : Javadoc 
+//TODO : Javadoc
 public class View extends JFrame{
 
 	private JLabel title;
 	private JPanel panel;
 	private JFrame frame;
 	private Model model;
-	private ArrayList<JLabel> list; 
-	
+	private ArrayList<JLabel> list;
+
 	public View(Model model) {
 		this.model = model;
 		list = new ArrayList<JLabel>();
-		
+
 		frame = new JFrame("Tic Tac Toe");
-		
+
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	
+
 		frame.setLayout(new GridLayout(3,3,0,0));
-		
+
 		  for(int i = 0; i < 9; i++){
 			  	JLabel label = new JLabel();
 		     	label.setText("");
@@ -31,14 +38,14 @@ public class View extends JFrame{
 		     	frame.add(label);
 		     	list.add(label);
 		    }
-		
+
 		frame.pack();
 		frame.setSize(400,400);
 		frame.setVisible(true);
-		
+
 		//TODO : Make pop-up for the game over scenario showing who won.
 	}
-	
+
 	//Updates the labels in the grid based on the int array in the model
 	public void updateView() {
         for (int i = 0; i < 9; i++) {
@@ -51,13 +58,13 @@ public class View extends JFrame{
             }
         }
     }
-	
+
 	//Registers the controller as the listener so click data is handled by the controller.
 	public void registerListener(Controller listener) {
 		frame.addMouseListener(listener);
 	}
 
-	
-	
-	
+
+
+
 }
