@@ -41,16 +41,16 @@ public class View extends JFrame{
 	
 	//Updates the labels in the grid based on the int array in the model
 	public void updateView() {
-		for (int i : model.getBoard()) {
-			if(model.getBoard()[i] == 1) {
-				list.get(i).setText("O");
-			}else if( model.getBoard()[i] == -1) {
-				list.get(i).setText("X");
-			}else {
-				list.get(i).setText("");
-			}
-		}
-	}
+        for (int i = 0; i < 9; i++) {
+            if(model.getBoard()[i] == 1) {
+                list.get(i).setText("O");
+            }else if( model.getBoard()[i] == -1) {
+                list.get(i).setText("X");
+            }else {
+                list.get(i).setText("");
+            }
+        }
+    }
 	
 	//Registers the controller as the listener so click data is handled by the controller.
 	public void registerListener(Controller listener) {
