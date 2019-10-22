@@ -16,17 +16,26 @@ import java.awt.event.MouseListener;
  * decides which square was clicked and sends this to the model.
  *
  */
+
 public class Controller implements MouseListener{
 
 	private Model model;
 	private View view;
 
+	/**
+	 * Controller constructor
+	 * @param model
+	 * @param view
+	 */
 	public Controller(Model model,  View view) {
 		this.model = model;
 		this.view = view;
 	}
 
-	//Tells the model what move was picked.
+	/**
+	 * Tells the model what move was picked.
+	 * @param p
+	 */
 	public void pickMove(Point p) {
 
 		int index = -1;
@@ -68,11 +77,21 @@ public class Controller implements MouseListener{
 		}
 	}
 
-	//Helper method checks if target is between two numbers
+	/**
+	 * Helper method checks if target is between two numbers
+	 * @param  target
+	 * @param  min
+	 * @param  max
+	 * @return
+	 */
 	private static boolean isBetween(int target, int min, int max){
 		return (target >= min) && (target <= max);
 	}
 
+	/**
+	 * Check if mouse is released.
+	 * @param e
+	 */
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		Point p = e.getPoint();
@@ -97,8 +116,5 @@ public class Controller implements MouseListener{
 	@Override
 	public void mousePressed(MouseEvent e) {
 	}
-
-
-
 
 }

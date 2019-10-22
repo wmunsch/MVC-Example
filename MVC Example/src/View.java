@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 
-//TODO : Javadoc
 public class View extends JFrame{
 
 	private JLabel title;
@@ -21,6 +20,10 @@ public class View extends JFrame{
 	private Model model;
 	private ArrayList<JLabel> list;
 
+	/**
+	 * View Constructor
+	 * @param model
+	 */
 	public View(Model model) {
 		this.model = model;
 		list = new ArrayList<JLabel>();
@@ -46,7 +49,9 @@ public class View extends JFrame{
 		//TODO : Make pop-up for the game over scenario showing who won.
 	}
 
-	//Updates the labels in the grid based on the int array in the model
+	/**
+	 * Updates the labels in the grid based on the int array in the model
+	 */
 	public void updateView() {
         for (int i = 0; i < 9; i++) {
             if(model.getBoard()[i] == 1) {
@@ -59,12 +64,12 @@ public class View extends JFrame{
         }
     }
 
-	//Registers the controller as the listener so click data is handled by the controller.
+	/**
+	 * Registers the controller as the listener so click data is handled by the controller.
+	 * @param listener
+	 */
 	public void registerListener(Controller listener) {
 		frame.addMouseListener(listener);
 	}
-
-
-
 
 }

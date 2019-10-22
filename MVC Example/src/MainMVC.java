@@ -11,6 +11,10 @@ import javax.swing.JFrame;
 // TODO : Javadoc
 public class MainMVC {
 
+	/**
+	 * Runs the main program.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Model model = new Model();
 		View view = new View(model);
