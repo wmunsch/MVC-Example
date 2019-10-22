@@ -23,8 +23,7 @@ public class Controller implements MouseListener{
 	public void pickMove(Point p) {
 
 		int index = -1;
-		int [] board = model.getBoard();
-		
+	
 		//If statements check which space was clicked
 
 		//Top left - left_x = 0, right_x = 135, top_y = 0, bottom_y = 150 
@@ -57,7 +56,7 @@ public class Controller implements MouseListener{
 		}
 
 		//If space is empty, set space based on player
-		if (board[index] == 0) {
+		if (model.getBoard()[index] == 0) {
 			model.setSpace(index);
 		}
 	}
@@ -70,7 +69,7 @@ public class Controller implements MouseListener{
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		Point p = e.getPoint();
-		System.out.println(p);
+		//System.out.println(p);
 		pickMove(p);
 		view.updateView();
 	}
