@@ -66,6 +66,7 @@ public class Model {
 	}
 	/**
 	 * Checks to see if either player has made a winning more in their last turn
+	 * Or if the whole board has been filled and the game is a tie
 	 */
 	public int checkIfGameOver() {
 		if (board[0] == 1 && board[3] ==1 && board[6] ==1) return 1;
