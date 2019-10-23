@@ -20,6 +20,8 @@ public class View extends JFrame{
 	private Model model;
 	private ArrayList<JLabel> list;
 	private Font font = new Font("TimesRoman",Font.BOLD,75);
+	
+	
 
 	/**
 	 * View Constructor
@@ -46,8 +48,16 @@ public class View extends JFrame{
 		frame.pack();
 		frame.setSize(400,400);
 		frame.setVisible(true);
+		
+	
 
 		//TODO : Make pop-up for the game over scenario showing who won.
+	}
+	
+	public void showGameOver(String player) {
+		JOptionPane.showMessageDialog(frame, "Game over. " + player + " wins.");
+		model.resetBoard();
+		updateView();
 	}
 
 	/**

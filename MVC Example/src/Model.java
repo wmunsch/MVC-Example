@@ -13,6 +13,7 @@ public class Model {
 	//The game board which stores x's and o's
 	private int [] board;
 	private int current_player = 1; // 1 is 0s, -1 is Xs
+	private boolean gameOver = false;
 
 	/**
 	 * Model Constructor
@@ -40,8 +41,8 @@ public class Model {
 	/**
 	 * Resets the board
 	 */
-	private void resetBoard() {
-		for (int i : board) {
+	public void resetBoard() {
+		for (int i =0; i < 9;i++) {
 			board[i] = 0;
 		}
 	}
@@ -62,5 +63,39 @@ public class Model {
 	 */
 	private void changePlayer() {
 		this.current_player = current_player * -1;
+	}
+	
+	public int checkIfGameOver() {
+		if (board[0] == 1 && board[3] ==1 && board[6] ==1) return 1;
+		if (board[0] == -1 && board[3] ==-1 && board[6] ==-1) return -1;
+		
+		if (board[0]==1 && board[1]==1 && board[2] ==1) return 1;
+		if (board[0]==-1 && board[1]==-1 && board[2] ==-1) return -1;
+		
+		if (board[0]==1 && board[4]==1 && board[8] ==1) return 1;
+		if (board[0]==-1 && board[4]==-1 && board[8] ==-1) return -1;
+		
+		if (board[6]==1 && board[7]==1 && board[8] ==1) return 1;
+		if (board[6]==-1 && board[7]==-1 && board[8] ==-1) return -1;
+		
+		if (board[2]==1 && board[5]==1 && board[8] ==1) return 1;
+		if (board[2]==-1 && board[5]==-1 && board[8] ==-1) return -1;
+		
+		if (board[1]==1 && board[4]==1 && board[7] ==1) return 1;
+		if (board[1]==-1 && board[4]==-1 && board[7] ==-1) return -1;
+		
+		if (board[3]==1 && board[4]==1 && board[5] ==1) return 1;
+		if (board[3]==-1 && board[4]==-1 && board[5] ==-1) return -1;
+		
+		if (board[2]==1 && board[4]==1 && board[6] ==1) return 1;
+		if (board[2]==-1 && board[4]==-1 && board[6] ==-1) return -1;
+		
+		boolean full = true;
+		for (int i = 0; i < 9 ; i ++) {
+			if (board[i] == 0) full=false;
+		}
+		if (full)return 3;
+		
+		return 0;
 	}
 }

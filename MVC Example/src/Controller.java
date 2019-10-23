@@ -74,7 +74,16 @@ public class Controller implements MouseListener{
 		//If space is empty, set space based on player
 		if (model.getBoard()[index] == 0) {
 			model.setSpace(index);
+			view.updateView();
 		}
+		if (model.checkIfGameOver() ==1) {
+			view.showGameOver("O");
+		}else if (model.checkIfGameOver()==-1) {
+			view.showGameOver("X");
+		}else if (model.checkIfGameOver()==3) {
+			view.showGameOver("Nobody");
+		}
+
 	}
 
 	/**
@@ -97,7 +106,7 @@ public class Controller implements MouseListener{
 		Point p = e.getPoint();
 		//System.out.println(p);
 		pickMove(p);
-		view.updateView();
+		//view.updateView();
 	}
 
 	//Unused required methods for the MouseListener interface
