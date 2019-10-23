@@ -64,7 +64,9 @@ public class Model {
 	private void changePlayer() {
 		this.current_player = current_player * -1;
 	}
-	
+	/**
+	 * Checks to see if either player has made a winning more in their last turn
+	 */
 	public int checkIfGameOver() {
 		if (board[0] == 1 && board[3] ==1 && board[6] ==1) return 1;
 		if (board[0] == -1 && board[3] ==-1 && board[6] ==-1) return -1;
