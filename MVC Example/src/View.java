@@ -19,6 +19,7 @@ public class View extends JFrame{
 	private JFrame frame;
 	private Model model;
 	private ArrayList<JLabel> list;
+	private Font font = new Font("TimesRoman",Font.BOLD,75);
 
 	/**
 	 * View Constructor
@@ -56,8 +57,12 @@ public class View extends JFrame{
         for (int i = 0; i < 9; i++) {
             if(model.getBoard()[i] == 1) {
                 list.get(i).setText("O");
+                list.get(i).setFont(font);
+                list.get(i).setHorizontalAlignment(JLabel.CENTER);
             }else if( model.getBoard()[i] == -1) {
                 list.get(i).setText("X");
+                list.get(i).setFont(font);
+                list.get(i).setHorizontalAlignment(JLabel.CENTER);
             }else {
                 list.get(i).setText("");
             }
