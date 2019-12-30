@@ -14,8 +14,6 @@ import javax.swing.*;
 
 public class View extends JFrame{
 
-	private JLabel title;
-	private JPanel panel;
 	private JFrame frame;
 	private Model model;
 	private ArrayList<JLabel> list;
@@ -41,17 +39,18 @@ public class View extends JFrame{
 			  	JLabel label = new JLabel();
 		     	label.setText("");
 		     	label.setBorder(BorderFactory.createMatteBorder(2, 2, 2, 2,Color.BLACK));
+		     	label.setFont(font);
+	            label.setHorizontalAlignment(JLabel.CENTER);
 		     	frame.add(label);
 		     	list.add(label);
+		     	
 		    }
 
 		frame.pack();
 		frame.setSize(400,400);
 		frame.setVisible(true);
 		
-	
 
-		//TODO : Make pop-up for the game over scenario showing who won.
 	}
 	
 	public void showGameOver(String player) {
@@ -67,12 +66,8 @@ public class View extends JFrame{
         for (int i = 0; i < 9; i++) {
             if(model.getBoard()[i] == 1) {
                 list.get(i).setText("O");
-                list.get(i).setFont(font);
-                list.get(i).setHorizontalAlignment(JLabel.CENTER);
             }else if( model.getBoard()[i] == -1) {
                 list.get(i).setText("X");
-                list.get(i).setFont(font);
-                list.get(i).setHorizontalAlignment(JLabel.CENTER);
             }else {
                 list.get(i).setText("");
             }

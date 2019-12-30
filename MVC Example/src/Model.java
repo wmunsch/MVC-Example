@@ -5,7 +5,6 @@
  * Last Updated: October 22nd, 2019
  */
 
-import java.awt.Point;
 
 
 public class Model {
@@ -13,7 +12,6 @@ public class Model {
 	//The game board which stores x's and o's
 	private int [] board;
 	private int current_player = 1; // 1 is 0s, -1 is Xs
-	private boolean gameOver = false;
 
 	/**
 	 * Model Constructor
