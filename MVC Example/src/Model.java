@@ -62,31 +62,34 @@ public class Model {
 	private void changePlayer() {
 		this.current_player = current_player * -1;
 	}
-	
+	/**
+	 * Checks to see if either player has made a winning more in their last turn
+	 * Or if the whole board has been filled and the game is a tie
+	 */
 	public int checkIfGameOver() {
 		if (board[0] == 1 && board[3] ==1 && board[6] ==1) return 1;
-		if (board[0] == -1 && board[3] ==-1 && board[6] ==-1) return -1;
+		else if (board[0] == -1 && board[3] ==-1 && board[6] ==-1) return -1;
 		
-		if (board[0]==1 && board[1]==1 && board[2] ==1) return 1;
-		if (board[0]==-1 && board[1]==-1 && board[2] ==-1) return -1;
+		else if (board[0]==1 && board[1]==1 && board[2] ==1) return 1;
+		else if (board[0]==-1 && board[1]==-1 && board[2] ==-1) return -1;
 		
-		if (board[0]==1 && board[4]==1 && board[8] ==1) return 1;
-		if (board[0]==-1 && board[4]==-1 && board[8] ==-1) return -1;
+		else if (board[0]==1 && board[4]==1 && board[8] ==1) return 1;
+		else if (board[0]==-1 && board[4]==-1 && board[8] ==-1) return -1;
 		
-		if (board[6]==1 && board[7]==1 && board[8] ==1) return 1;
-		if (board[6]==-1 && board[7]==-1 && board[8] ==-1) return -1;
+		else if (board[6]==1 && board[7]==1 && board[8] ==1) return 1;
+		else if (board[6]==-1 && board[7]==-1 && board[8] ==-1) return -1;
 		
-		if (board[2]==1 && board[5]==1 && board[8] ==1) return 1;
-		if (board[2]==-1 && board[5]==-1 && board[8] ==-1) return -1;
+		else if (board[2]==1 && board[5]==1 && board[8] ==1) return 1;
+		else if (board[2]==-1 && board[5]==-1 && board[8] ==-1) return -1;
 		
-		if (board[1]==1 && board[4]==1 && board[7] ==1) return 1;
-		if (board[1]==-1 && board[4]==-1 && board[7] ==-1) return -1;
+		else if (board[1]==1 && board[4]==1 && board[7] ==1) return 1;
+		else if (board[1]==-1 && board[4]==-1 && board[7] ==-1) return -1;
 		
-		if (board[3]==1 && board[4]==1 && board[5] ==1) return 1;
-		if (board[3]==-1 && board[4]==-1 && board[5] ==-1) return -1;
+		else if (board[3]==1 && board[4]==1 && board[5] ==1) return 1;
+		else if (board[3]==-1 && board[4]==-1 && board[5] ==-1) return -1;
 		
-		if (board[2]==1 && board[4]==1 && board[6] ==1) return 1;
-		if (board[2]==-1 && board[4]==-1 && board[6] ==-1) return -1;
+		else if (board[2]==1 && board[4]==1 && board[6] ==1) return 1;
+		else if (board[2]==-1 && board[4]==-1 && board[6] ==-1) return -1;
 		
 		boolean full = true;
 		for (int i = 0; i < 9 ; i ++) {
